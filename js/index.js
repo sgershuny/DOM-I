@@ -36,7 +36,56 @@ const siteContent = {
     "copyright" : "Copyright Great Idea! 2018"
   },
 };
+const a = document.getElementsByTagName('a');
+i = 0
 
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+for (const key in siteContent.nav){
+  a[i].classList.add(`${key}`)
+  a[i].textContent = siteContent.nav[key];
+  // console.log(siteContent.nav[key]);
+  i+=1;;
+  if(i == 6){
+    break
+  }
+}
+
+const imgHead = document.getElementsByTagName("img");
+
+imgHead[1].setAttribute("src", "img/header-img.png");
+
+i = 0
+
+for (const key in siteContent.cta){
+  attr = document.querySelector(`${key}`);
+  attr.textContent = siteContent.cta[key];
+  i+=1
+  if(i === 2){
+    break
+  }
+}
+
+
+
+const imgMiddle = document.querySelector("#middle-img");
+
+imgMiddle.setAttribute("src", "img/mid-page-accent.jpg");
+
+const h4 = document.getElementsByTagName("h4");
+
+h4[0].textContent = siteContent["main-content"]["features-h4"];
+h4[1].textContent = siteContent["main-content"]["about-h4"];
+h4[2].textContent = siteContent["main-content"]["services-h4"];
+h4[3].textContent = siteContent["main-content"]["product-h4"];
+h4[4].textContent = siteContent["main-content"]["vision-h4"];
+
+const p = document.getElementsByTagName("p");
+
+p[0].textContent = siteContent["main-content"]["features-content"];
+p[1].textContent = siteContent["main-content"]["about-content"];
+p[2].textContent = siteContent["main-content"]["services-content"];
+p[3].textContent = siteContent["main-content"]["product-content"];
+p[4].textContent = siteContent["main-content"]["vision-content"];
